@@ -7,14 +7,24 @@ public class CreateFile {
         File myFile = new File("MyFile.txt");
         System.out.println("My File is located at" + myFile.getAbsolutePath());
         try{
-            FileWriter myWriter = new FileWriter(myFile, true);//would need (myFile, true) to keep data
-            myWriter.write("\nKnuckle");//permanently rewriting
+            FileWriter myWriter = new FileWriter(myFile);//would need (myFile, true) to keep data
+            myWriter.write("Knuckle");//permanently rewriting
             myWriter.write("\nappended at end?");//canny use println, need \n for new line
             myWriter.close();
         }
         catch (IOException e)
         {
             e.printStackTrace();
+        }
+        try{
+            PrintWriter myPrint = new PrintWriter(new FileWriter("myFile.txt", true));
+            myPrint.println("Joseph");
+            myPrint.println("Christopher");
+            myPrint.close();
+        }
+        catch(IOException f)
+        {
+            f.printStackTrace();
         }
     }
 }
