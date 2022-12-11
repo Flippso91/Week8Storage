@@ -16,6 +16,7 @@ public class CreateFile {
         {
             e.printStackTrace();
         }
+
         try{
             PrintWriter myPrint = new PrintWriter(new FileWriter("myFile.txt", true));
             myPrint.println("Joseph");
